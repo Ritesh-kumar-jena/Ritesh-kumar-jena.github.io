@@ -2,6 +2,11 @@ import React from 'react'
 import Allroutes from './Component/Allroutes'
 import Navbar from './Component/Navbar'
 import Footer from './Component/Footer'
+import About from './Pages/About'
+import Contact from './Pages/Contact'
+import Home from './Pages/Home'
+import Skills from './Pages/Skills'
+import Project from './Pages/Project'
 
 function App() {
   
@@ -9,7 +14,11 @@ function App() {
   return (
     <>
      <Navbar/>
-     <Allroutes/>
+     <Home id="home" />
+     <About id="about" />
+     <Skills id="skills" />
+     <Project id="projects" />
+     <Contact id="contact" />
      <Footer/>
     </>
   )
