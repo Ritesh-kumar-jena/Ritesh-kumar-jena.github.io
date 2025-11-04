@@ -6,8 +6,9 @@ import {
   useDisclosure,
   Stack,
   Button,
+  Link,
+  Image
 } from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import ThemeToggleButton from './ThemeToggleButton';
 import ResumeButton from './ResumeButton';
@@ -27,8 +28,18 @@ function Navbar() {
     <Box px={4} boxShadow="sm" position="sticky" top="0" zIndex="10" bg="cyan.400" >
       <Flex h={16} alignItems="center" justifyContent="space-between" maxW="1200px" mx="auto">
         {/* Left: Logo */}
-        <Box fontWeight="bold" fontSize={{ base: 'lg', md: 'xl' }}>
-          RiteshPortfolio
+        <Box>
+          <Link href="#home">
+          <Image 
+          src="/My_Logo.png" 
+          alt="Logo" 
+          boxSize={{ base: "40px", md: "50px" }}
+           transform="scale(1.15) translateY(-2px)"
+          transition="all 0.3s ease-in-out"
+          objectFit="contain"
+          _hover={{ transform: "translateY(-5px) scale(1.05)"}}
+          />
+          </Link>
         </Box>
 
         {/* Hamburger menu (mobile) */}
@@ -57,7 +68,7 @@ function Navbar() {
         </HStack>
 
         {/* Right: Theme toggle */}
-        <ResumeButton/>
+        <ResumeButton variant="ghost" colorScheme="gray" size={{ base: 'sm', md: 'md', lg: 'lg' }} />
         <ThemeToggleButton />
       </Flex>
 

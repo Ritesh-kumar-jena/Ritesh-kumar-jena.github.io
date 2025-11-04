@@ -1,9 +1,9 @@
 import { Button} from '@chakra-ui/react';
 
 
-function ResumeButton() {
+function ResumeButton({ variant = "ghost", colorScheme = "teal", size = "md" }) {
 
- const handelclick=()=>{
+ const handleClick=()=>{
     const resumeUrl = '/Ritesh-Kumar-Jena-Resume.pdf';
     window.open(resumeUrl, '_blank')
 
@@ -14,12 +14,15 @@ function ResumeButton() {
  }
   return (
     <Button 
-    onClick={handelclick}
-     variant="ghost"
-     size={{ base: 'sm', md: 'md', lg: 'lg' }}
-     m={{ base: 1, md: 2 }}
-     fontWeight="bold"
-     _hover={{ color: 'red.600' }}
+    onClick={handleClick}
+      variant={variant}
+      colorScheme={colorScheme}
+      size={size}
+      fontWeight="bold"
+      _hover={{
+        transform: "scale(1.05)",
+      }}
+      transition="all 0.3s ease"
    >
     Resume
     </Button>
