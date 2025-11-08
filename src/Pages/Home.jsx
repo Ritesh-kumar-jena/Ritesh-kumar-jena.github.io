@@ -176,7 +176,7 @@ const Home = ({ id }) => {
           <Image
             borderRadius="full"
             boxSize={{ base: "220px", md: "300px" }}
-            src="/MyProfile2.png"
+            src="/MyProfile.png"
             alt="Ritesh Kumar Jena"
             objectFit="cover"
             objectPosition="center 25%"

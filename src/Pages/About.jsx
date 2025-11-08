@@ -7,6 +7,7 @@ import {
   Image,
   Divider,
   useColorModeValue,
+  useBreakpointValue
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
@@ -17,6 +18,7 @@ const MotionVStack = motion.create(VStack);
 const About = ({ id }) => {
   const textColor = useColorModeValue("gray.700", "gray.300");
   const headingColor = useColorModeValue("teal.600", "teal.400");
+  const isMobile = useBreakpointValue({ base: true, md: false });
 
   return (
     <Box
@@ -47,23 +49,23 @@ const About = ({ id }) => {
 
         {/* Content Layout */}
         <HStack
-          flexDir={{ base: "column", md: "row" }}
-          spacing={{ base: 10, md: 16 }}
+          flexDir={{ base: "column", md: "column",lg:"row" }}
+          spacing={{ base: 5, md: 16 }}
           justify="space-between"
           align="center"
         >
           {/* Left - Profile Image (slide in from left) */}
           <MotionImage
-            src="/MyProfile3.png"
+            src="https://res.cloudinary.com/dy9gltg7s/image/upload/v1762413385/fullstack_otvvss.gif"
             alt="Ritesh Kumar Jena"
-            borderRadius="full"
-            boxSize={{ base: "220px", md: "280px" }}
-            objectFit="cover"
+            borderRadius="xl"
+            w={{ base: "300px", md: "520px" }}
+            h="auto"
             boxShadow="0 0 35px rgba(0, 255, 255, 0.25)"
-            initial={{ opacity: 0, x: -100, scale: 0.9 }}
+            initial={{ opacity: 0, x: isMobile ? -60 : -100, scale: isMobile ? 0.95 : 0.9 }}
             whileInView={{ opacity: 1, x: 0, scale: 1 }}
-            transition={{ duration: 0.9, ease: "easeOut" }}
-            viewport={{ once: false, amount: 0.4  }}
+            transition={{ duration: isMobile ? 1.1 : 0.9, ease: "easeOut" }}
+            viewport={{ once: false, amount: isMobile ? 0.25 : 0.4 }}
           />
 
           {/* Right - Text (slide in from right) */}
@@ -71,10 +73,10 @@ const About = ({ id }) => {
             align={{ base: "center", md: "start" }}
             spacing={5}
             maxW="3xl"
-            initial={{ opacity: 0, x: 100 }}
+            initial={{ opacity: 0, x: isMobile ? 60 : 100 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.9, ease: "easeOut", delay: 0.2 }}
-            viewport={{ once: false, amount: 0.5  }}
+           transition={{ duration: isMobile ? 1.1 : 0.9, ease: "easeOut", delay: 0.15 }}
+            viewport={{ once: false, amount: isMobile ? 0.25 : 0.5 }}
           >
             <Text fontSize="lg" color={textColor} lineHeight="taller">
               I’m{" "}
