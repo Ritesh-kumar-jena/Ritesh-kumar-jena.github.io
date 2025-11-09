@@ -19,8 +19,8 @@ function Navbar() {
   const Links = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
-    { name: 'Project', href: '#projects' },
     { name: 'Skills', href: '#skills' },
+    { name: 'Project', href: '#projects' },
     { name: 'Contact', href: '#contact' },
   ];
 
