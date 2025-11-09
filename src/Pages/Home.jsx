@@ -28,7 +28,7 @@ const Home = ({ id }) => {
       >
         {/* ---------- LEFT CONTENT ---------- */}
         <VStack align="start" spacing={6}>
-          {/* 👋 Greeting */}
+          {/*  Greeting */}
           <MotionBox
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -47,7 +47,7 @@ const Home = ({ id }) => {
             </Text>
           </MotionBox>
 
-          {/* 💫 Name */}
+          {/*  Name */}
           <MotionBox
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -59,7 +59,7 @@ const Home = ({ id }) => {
             </Heading>
           </MotionBox>
 
-          {/* 💻 Typewriter Titles */}
+          {/*  Typewriter Titles */}
           <MotionBox
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -89,7 +89,7 @@ const Home = ({ id }) => {
             </Text>
           </MotionBox>
 
-          {/* 🌐 Description */}
+          {/*  Description */}
           <MotionBox
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -110,7 +110,7 @@ const Home = ({ id }) => {
             </Text>
           </MotionBox>
 
-          {/* 📄 Resume Button */}
+          {/*  Resume Button */}
           <MotionBox
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -130,7 +130,7 @@ const Home = ({ id }) => {
               </Button>
             </HStack>
             
-            {/* 🔗 Social Icons */}
+            {/*  Social Icons */}
               <HStack spacing={4} pt={4}>
                 <Link
                   href="https://github.com/Ritesh-kumar-jena"

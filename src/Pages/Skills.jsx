@@ -49,16 +49,16 @@ function Skills({ id }) {
             My <Text as="span" color={headingColor}>Technical</Text> Skills
           </Heading>
 
-          {/* ✅ TECH STACK SECTION */}
+          {/*  TECH STACK SECTION */}
           <Heading fontSize="2xl" mb={6} color={headingColor} textAlign="center">
             Tech Stack
           </Heading>
 
-          {/* ✅ Grid width limited to 75% */}
+          {/*  Grid width limited to 75% */}
           <Box maxW="75%" mx="auto">
             <SimpleGrid
               columns={{ base: 2, sm: 3, md: 4, lg: 5 }}
-              columnGap={4}
+              columnGap={6}
               rowGap={6}
               justifyItems="center"
               mb={8}
@@ -97,7 +97,7 @@ function Skills({ id }) {
             </SimpleGrid>
           </Box>
 
-          {/* ✅ TOOLS SECTION */}
+          {/*  TOOLS SECTION */}
           <Heading fontSize="2xl" mb={6} color={headingColor} textAlign="center">
             Tools
           </Heading>
