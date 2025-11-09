@@ -1,105 +1,124 @@
-import {
+import { 
   Box,
   Heading,
   VStack,
   HStack,
   Text,
-  IconButton,
+  Icon,
   Link,
-  Input,
-  Textarea,
-  Button,
+  useColorModeValue
 } from "@chakra-ui/react";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from "react-icons/fa";
+
+const MotionVStack = motion.create(VStack);
 
 function Contact({ id }) {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const headingColor = useColorModeValue("teal.600", "teal.400");
+  const textColor = useColorModeValue("gray.700", "gray.300");
 
   return (
-    <Box ref={ref} id={id} minH="90vh" px={6} py={12}>
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+    <Box id={id} minH="80vh" px={6} py={12}>
+      <MotionVStack
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.3 }}
+        transition={{ duration: 0.7 }}
+        spacing={8}
+        maxW="500px"
+        mx="auto"
       >
-        <Heading textAlign="center" mb={8}>
+        <Heading textAlign="center" color={headingColor}>
           Contact Me
         </Heading>
 
-        {/* Contact Section */}
-        <VStack
-          spacing={8}
-          align="center"
-          justify="center"
-          maxW="500px"
-          mx="auto"
-        >
-          <Text textAlign="center" fontSize="lg">
-            I'd love to hear from you! Whether you have a project idea, a
-            question, or just want to say hi — feel free to reach out.
-          </Text>
+        <Text textAlign="center" fontSize="lg" color={textColor}>
+          I'd love to hear from you! Whether you have a project idea, a
+          question, or just want to say hi — feel free to reach out.
+        </Text>
 
-          {/* Social Links */}
-          <HStack spacing={6}>
-            <IconButton
-              as={Link}
+        {/* EMAIL */}
+        <MotionVStack
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          viewport={{ once: false }}
+          w="100%"
+        >
+          <HStack spacing={4}>
+            <Icon as={FaEnvelope} boxSize={6} color={headingColor} />
+            <Link
+              href="mailto:jenariteshkumar85@gmail.com"
+              fontSize="lg"
+              fontWeight="semibold"
+              color={headingColor}
+            >
+              jenariteshkumar85@gmail.com
+            </Link>
+          </HStack>
+        </MotionVStack>
+
+        {/* PHONE */}
+        <MotionVStack
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: false }}
+          w="100%"
+        >
+          <HStack spacing={4}>
+            <Icon as={FaPhone} boxSize={6} color={headingColor} />
+            <Text fontSize="lg" fontWeight="semibold">
+              +91 79781 16002
+            </Text>
+          </HStack>
+        </MotionVStack>
+
+        {/* GITHUB */}
+        <MotionVStack
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: false }}
+          w="100%"
+        >
+          <HStack spacing={4}>
+            <Icon as={FaGithub} boxSize={6} color={headingColor} />
+            <Link
               href="https://github.com/Ritesh-kumar-jena"
               target="_blank"
-              aria-label="GitHub"
-              icon={<FaGithub />}
-              size="lg"
-              variant="ghost"
-            />
-            <IconButton
-              as={Link}
-              href="https://linkedin.com/in/ritesh-kumar-jena"
-              target="_blank"
-              aria-label="LinkedIn"
-              icon={<FaLinkedin />}
-              size="lg"
-              variant="ghost"
-            />
-            <IconButton
-              as={Link}
-              href="mailto:riteshkumarjena123@gmail.com"
-              aria-label="Email"
-              icon={<FaEnvelope />}
-              size="lg"
-              variant="ghost"
-            />
-          </HStack>
-
-          {/* Contact Form (optional static form) */}
-          <Box w="100%">
-            <VStack spacing={4}>
-              <Input placeholder="Your Name" variant="filled" />
-              <Input placeholder="Your Email" type="email" variant="filled" />
-              <Textarea
-                placeholder="Your Message"
-                variant="filled"
-                rows={5}
-              />
-              <Button colorScheme="teal" w="100%">
-                Send Message
-              </Button>
-            </VStack>
-          </Box>
-
-          <Text fontSize="sm" mt={6} opacity={0.7}>
-            or email me directly at{" "}
-            <Link
-              href="mailto:riteshkumarjena123@gmail.com"
-              color="teal.400"
-              fontWeight="bold"
+              fontSize="lg"
+              fontWeight="semibold"
+              color={headingColor}
             >
-              riteshkumarjena123@gmail.com
+              github.com/Ritesh-kumar-jena
             </Link>
-          </Text>
-        </VStack>
-      </motion.div>
+          </HStack>
+        </MotionVStack>
+
+        {/* LINKEDIN */}
+        <MotionVStack
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: false }}
+          w="100%"
+        >
+          <HStack spacing={4}>
+            <Icon as={FaLinkedin} boxSize={6} color={headingColor} />
+            <Link
+              href="https://www.linkedin.com/in/ritesh-kumar-jena-aa6407270"
+              target="_blank"
+              fontSize="lg"
+              fontWeight="semibold"
+              color={headingColor}
+            >
+              linkedin.com/in/ritesh-kumar-jena-aa6407270
+            </Link>
+          </HStack>
+        </MotionVStack>
+
+      </MotionVStack>
     </Box>
   );
 }

@@ -13,7 +13,7 @@ const Footer = () => {
       borderColor={useColorModeValue("gray.300", "gray.700")}
     >
       <HStack justify="center" spacing={6} mb={3}>
-        <Link href="https://github.com/your-github" isExternal>
+        <Link href="https://github.com/Ritesh-kumar-jena" isExternal>
           <IconButton
             aria-label="GitHub"
             icon={<FaGithub />}
@@ -22,7 +22,7 @@ const Footer = () => {
             _hover={{ color: "teal.400" }}
           />
         </Link>
-        <Link href="https://linkedin.com/in/your-linkedin" isExternal>
+        <Link href="https://www.linkedin.com/in/ritesh-kumar-jena-aa6407270" isExternal>
           <IconButton
             aria-label="LinkedIn"
             icon={<FaLinkedin />}
@@ -31,7 +31,7 @@ const Footer = () => {
             _hover={{ color: "teal.400" }}
           />
         </Link>
-        <Link href="mailto:your.email@example.com">
+        <Link href="mailto:jenariteshkumar85@gmail.com">
           <IconButton
             aria-label="Email"
             icon={<FaEnvelope />}
