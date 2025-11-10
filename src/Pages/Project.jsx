@@ -51,10 +51,17 @@ function Project({ id }) {
   const columnCount = useBreakpointValue({ base: 1, md: 2, lg: 3 });
 
   return (
-    <Box id={id} minH="90vh" px={6} py={12}>
-      <Heading textAlign="center" mb={10} color={headingColor}>
-        My Projects
-      </Heading>
+    <Box id={id} minH="90vh" px={6} py={6}>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.3 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
+        <Heading textAlign="center" mb={10} color={headingColor}>
+          My Projects
+        </Heading>
+      </motion.div>
 
       <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8}>
         {projects.map((p, index) => {
@@ -104,7 +111,7 @@ function Project({ id }) {
 
                 <Text mb={3}>{p.desc}</Text>
                 <Text fontSize="sm" mt={2}>
-                  <Text as="b" color={headingColor}>Tech Stack: </Text> 
+                  <Text as="b" color={headingColor}>Tech Stack: </Text>
                   {p.TechStack}
                 </Text>
 

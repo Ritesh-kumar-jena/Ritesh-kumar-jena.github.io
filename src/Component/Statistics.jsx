@@ -14,7 +14,7 @@ export default function Statistics() {
     const bgColor=useColorModeValue("gray.200", "gray.700")
     const textColor=useColorModeValue("black", "white")
   return (
-    <Box id="statistics" minH="60vh" px={1} py={1} >
+    <Box id="statistics" minH="60vh" px={1} py={6} >
       {/* Title */}
       <Heading
         textAlign="center"

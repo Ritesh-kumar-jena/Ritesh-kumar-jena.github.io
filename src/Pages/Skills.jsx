@@ -38,7 +38,7 @@ function Skills({ id }) {
 
   return (
     <>
-      <Box ref={ref} id={id} minH="90vh" px={6} py={12}>
+      <Box ref={ref} id={id} minH="90vh" px={6} py={6}>
         <MotionBox
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
